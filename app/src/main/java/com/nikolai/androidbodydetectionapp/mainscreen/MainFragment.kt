@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.nikolai.androidbodydetectionapp.R
 
 class MainFragment: Fragment() {
@@ -21,7 +22,8 @@ class MainFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val btn = view.findViewById<Button>(R.id.btn_start)
         btn.setOnClickListener {
-
+            val controller = findNavController()
+            controller.navigate(R.id.action_mainFragment_to_secondFragment)
         }
     }
 }
